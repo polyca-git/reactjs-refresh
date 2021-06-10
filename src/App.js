@@ -6,13 +6,17 @@ import GoalList from './components/GoalList'; //Example import of a component we
 
 class App extends React.Component {
   render() {
+    const courseGoals = [
+      { id: 'cg1', text: 'Finish the course.' },
+      { id: 'cg2', text: 'Learn the main topic.' },
+      { id: 'cg3', text: 'Help other students.' }
+    ]; //We have created a data
+
     return <div className="course-goals">
       <h2>Course Goals</h2>
-      <GoalList /> 
-    </div>;
-  }//<GoalList /> is an example use of a component we have created and imported.
-}//These looks like html, but they are JSX eventually they will be translated to html.
-//The div tag in the return statement takes className attribute, this is class we know from the HTML, but since Javascript
-//Has a component called class, JSX uses className instead of class keyword.
+      <GoalList goals={courseGoals} /> 
+    </div>;//we are passing our data to the component with the name of goals
+  }
+}
 
 export default App;
